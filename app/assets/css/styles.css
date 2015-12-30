@@ -1,0 +1,145 @@
+.wrapper {
+	max-width: 1200px;
+	margin: 0 auto;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 40px;
+}
+
+h1 {
+	font-size: 30px;
+	border-bottom: 1px solid #546e7a;
+	padding-bottom: 20px;
+}
+
+p {
+	margin-top: 50px;
+}
+
+p img {
+	width: 60%;
+	height: auto;
+}
+
+h1, a {
+	text-align: center;
+}
+
+.btn {
+	display: inline-block;
+	background: #6a53bd;
+	padding: 20px;
+	margin: 40px auto;
+	color: #fff;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 20px;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+	
+}
+
+a:hover {
+	background: #8cc948;
+	cursor: pointer;
+}
+
+.country-list a {
+	display: block;
+	text-decoration: none;
+}
+
+.country-list li {
+	display: flex;
+}
+
+.country-list .headline p{
+	font-weight: bold;
+}
+
+.country-list a li:hover {
+	background: #8cc948;
+	cursor: pointer;
+	color: white; 
+}
+
+.country-list a li:hover p{
+	color: white;
+}
+
+.country-list p {
+	padding: 10px 20px;
+	width: 17%;
+	text-align: left;
+	text-decoration: none;
+	color: black;
+}
+
+.description {
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	-moz-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	-o-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+
+.description p {
+	width: 50%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 20px 30px;
+	margin-top: 0;
+	padding: 10px 0;
+}
+
+.neighbour {
+	margin-right: 20px;
+	display: inline-block;
+}
+
+/*********************************************
+* Loading
+**********************************************/
+
+body, html { position:relative; min-height:100%; }
+
+.loading {
+  position:relative;
+  height:100%;
+}
+
+.loading:before {
+  position:absolute;
+  content:"";
+  left:0;
+  bottom:0;
+  right:0;
+  top:0;
+  z-index:1000;
+  background:rgba(255,255,255,0.9) no-repeat center center;
+  background-image: url('../img/preloader.gif');
+  height: 100vh;
+}
+
+.animate-view-container { position:relative; min-height: 100%; }
+.animate-view.ng-enter,
+.animate-view.ng-leave {
+    transition:1s linear all;
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background:#eee;
+}
+
+.animate-view.ng-enter { opacity:0; z-index:100; }
+.animate-view.ng-enter.ng-enter-active { opacity:1; }
+.animate-view.ng-leave { opacity:1; z-index:99; }
+.animate-view.ng-leave.ng-leave-active { opacity:0; }

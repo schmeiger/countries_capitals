@@ -1,0 +1,37 @@
+<h1>Countries & Capitals</h1>
+
+<h2>{{cntr.geonames.country.countryname}}</h2>
+
+<section class="description">
+	
+	<p>Population of Country</p>
+	<p>{{cntr.geonames.country.population | number}}</p>
+
+	<p>Area</p>
+	<p>{{cntr.geonames.country.areainsqkm | number}}</p>
+
+	<p>Capital</p>
+	<p>{{cntr.geonames.country.capital}}</p>
+
+	<p>Population of Capital</p>
+	<p>{{capitalPopulation | number}}</p>
+
+	<p>Neighbours</p>
+	<p>
+		<span ng-repeat="neighbour in neighbours.geonames.geoname">
+			<a class="neighbour" href="#/countries/:{{neighbour.countrycode}}">{{neighbour.countryname}}</a>
+		</span>
+	</p>
+
+	<p>
+		<img ng-src="http://www.geonames.org/flags/x/{{countryCode | lowercase}}.gif" />
+	</p>
+	<p>
+		<img ng-src="http://www.geonames.org/img/country/250/{{countryCode | uppercase}}.png" />
+	</p>
+</section>
+
+
+	<a href="#/" class="btn">Home</a>
+	<a href="#/countries" class="btn">Browse Countries</a>
+

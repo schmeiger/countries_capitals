@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="countriesCapitalsApp">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name=“viewport” content=“width=device-width, initial-scale=1.0, maximum-scale=1.0”>	
+	<meta name="format-detection" content="telephone=no">
+	
+	<title>Countries and Capitals</title>
+
+	<link rel="shortcut icon" href="">
+
+	<!-- build:css ./_assets/combined.css -->
+	<link rel="stylesheet" href="assets/css/styles.css">
+	<!-- end build -->
+
+</head>
+<body ng-class="{loading: isLoading}">
+	
+	<div class="wrapper">
+		<div class="animate-view-container">
+		    <div ng-view class="animate-view"></div>
+		</div>
+	</div>
+
+	<!-- build:js ./_assets/combined.js -->
+	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/angular-animate/angular-animate.min.js"></script>
+	<script src="bower_components/angular-route/angular-route.min.js"></script>
+	<script src="bower_components/angular-xml2json/angular-xml2json.js"></script>
+
+	<script src="module.js"></script>
+	<script src="components/countries/countryCtrl.js"></script>
+	<script src="components/countries/countryDetailsCtrl.js"></script>
+	<script src="components/home/homeCtrl.js"></script>
+	<!-- end buid -->
+</body>
+</html>

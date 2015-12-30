@@ -1,0 +1,24 @@
+<h1>Countries & Capitals</h1>
+
+<ul class="country-list">
+	<li class="headline">
+		<p>Name</p>
+		<p>Country Code</p>
+		<p>Capital</p>
+		<p>Area in km2</p>
+		<p>Population</p>
+		<p>Continent</p>
+	</li>
+	<a ng-repeat="cntr in countries.geonames.country" ng-href="#/countries/:{{cntr.countrycode}}">
+		<li>
+			<p>{{cntr.countryname}}</p>
+			<p>{{cntr.countrycode}}</p>
+			<p>{{cntr.capital}}</p>
+			<p>{{cntr.areainsqkm | number}}</p>
+			<p>{{cntr.population | number}}</p>
+			<p>{{cntr.continent}}</p>
+		</li>
+	</a>
+</ul>
+
+<a href="#/" class="btn">Home</a>
