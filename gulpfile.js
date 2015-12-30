@@ -10,7 +10,10 @@ var rev = require('gulp-rev');
 var clean = require('gulp-clean');
 
 var paths = {
-  scripts: [ 'app/**/*.js', '!./app/bower_components/**/*.js' ],
+  scripts: [ 
+    './app/**/*.js', 
+    '!./app/bower_components/**/*.js' 
+  ],
   html: [
     './app/**/*.html',
     '!./app/index.html',
@@ -26,14 +29,21 @@ gulp.task('clean', function(){
 });
 
 gulp.task('copy', [ 'clean' ], function() {
-  gulp.src( paths.html )
-    .pipe(gulp.dest('build/'));
+    gulp.src(['./app/assets/img/**/*'])
+        .pipe(gulp.dest('build/img/'));
+    
+    gulp.src(['./app/bower_components/**/*.js'])
+        .pipe(gulp.dest('build/bower_components/'));
+    
+    gulp.src(paths.html)
+        .pipe(gulp.dest('build/'));
 });
 
 gulp.task('usemin', [ 'copy' ], function(){
   gulp.src( paths.index )
     .pipe(usemin({
       css: [ minifyCss(), 'concat' ],
+//      js: [],
       js: [ ngmin(), uglify() ]
     }))
     .pipe(gulp.dest( paths.build ))
@@ -44,7 +54,17 @@ gulp.task('build', ['usemin']);
 // connect
 gulp.task('connect', function() {
   connect.server({
-    root: './app/'
+    root: 'app/',
+    port: 8080
   });
 });
+
+gulp.task('connect-build', function() {
+  connect.server({
+    root: 'build/',
+    port: 8000
+  });
+});
+
+
 gulp.task('default', ['connect']);

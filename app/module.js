@@ -1,4 +1,8 @@
-angular.module('countriesCapitalsApp', ['ngRoute', 'ngAnimate', 'angularXml2json'])
+angular.module('countriesCapitalsApp', [
+    'ngRoute', 
+    'ngAnimate', 
+    'angularXml2json'
+])
 .config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider){
 
 	$httpProvider.defaults.useXDomain = true;
@@ -19,7 +23,7 @@ angular.module('countriesCapitalsApp', ['ngRoute', 'ngAnimate', 'angularXml2json
 	});
 
 }])
-.run(function($rootScope, $location, $timeout) {
+.run(['$rootScope','$location','$timeout',function($rootScope, $location, $timeout) {
     $rootScope.$on('$routeChangeError', function() {
         $location.path("/error");
     });
@@ -31,7 +35,7 @@ angular.module('countriesCapitalsApp', ['ngRoute', 'ngAnimate', 'angularXml2json
         $rootScope.isLoading = false;
       }, 1000);
     });
-})
+}])
 .factory('getCapitalsSrvc', ['$http', function($http){
 	return {
 		getAllCountries : function(){
