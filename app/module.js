@@ -51,4 +51,9 @@ angular.module('countriesCapitalsApp', [
 			return $http.get(' http://api.geonames.org/search?username=schmeiger&name=' + encodeURIComponent(capital) + '&style=full');
 		}
 	}
+}])
+.factory('helloService', [function() {
+    return function() {
+        return 'hello';
+    }
 }]);
